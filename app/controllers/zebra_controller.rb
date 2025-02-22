@@ -1,9 +1,8 @@
 class ZebraController < ApplicationController
 
-  @random_move = ["rock", "paper", "scissors"].sample
-  @outcome = "They played #{@random_move}!"
-
   def giraffe
+
+    @random_move = ["rock", "paper", "scissors"].sample
     
     if @random_move == "rock"
       @result = "tied"
@@ -13,13 +12,15 @@ class ZebraController < ApplicationController
       @result = "won"
     end
   
-    @winner = "We #{result}!"
+    @winner = "We #{@result}!"
 
     render ({ :template => "game_templates/play_rock" })
   
   end
 
   def elephant
+
+    @random_move = ["rock", "paper", "scissors"].sample
 
     if @random_move == "paper"
       @result = "tied"
@@ -29,13 +30,15 @@ class ZebraController < ApplicationController
       @result = "won"
     end
   
-    @winner = "We #{result}!"
+    @winner = "We #{@result}!"
 
     render ({ :template => "game_templates/play_paper" })
   
   end
 
   def lion
+
+    @random_move = ["rock", "paper", "scissors"].sample
 
     if @random_move == "scissors"
       @result = "tied"
@@ -45,7 +48,7 @@ class ZebraController < ApplicationController
       @result = "won"
     end
   
-    @winner = "We #{result}!"
+    @winner = "We #{@result}!"
 
     render ({ :template => "game_templates/play_scissors" })
   
